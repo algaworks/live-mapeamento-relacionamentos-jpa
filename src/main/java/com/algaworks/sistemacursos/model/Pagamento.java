@@ -21,5 +21,7 @@ public class Pagamento {
 
     private BigDecimal valor;
 
-    //private Matricula matricula;
+    @OneToOne
+    @JoinColumn(name = "matricula_id")
+    private Matricula matricula;
 }

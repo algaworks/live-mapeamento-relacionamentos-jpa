@@ -22,10 +22,15 @@ public class Matricula {
     @Column(name = "data_matricula")
     private LocalDateTime dataMatricula;
 
-    //private Curso curso;
+    @ManyToOne
+    @JoinColumn(name = "curso_id")
+    private Curso curso;
 
-    //private Aluno aluno;
+    @ManyToOne
+    @JoinColumn(name = "aluno_id")
+    private Aluno aluno;
 
-    //private Pagamento pagamento;
+    @OneToOne(mappedBy = "matricula")
+    private Pagamento pagamento;
 
 }

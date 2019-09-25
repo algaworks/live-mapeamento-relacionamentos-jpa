@@ -20,5 +20,7 @@ public class Aula {
 
     private String nome;
 
-    //private Modulo modulo;
+    @ManyToOne
+    @JoinColumn(name = "modulo_id")
+    private Modulo modulo;
 }

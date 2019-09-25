@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,5 +21,6 @@ public class Aluno {
 
     private String nome;
 
-    //private List<Curso> cursos;
+    @ManyToMany(mappedBy = "alunos")
+    private List<Curso> cursos;
 }

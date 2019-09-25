@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,7 +21,10 @@ public class Modulo {
 
     private String nome;
 
-    //private Curso curso;
+    @ManyToOne
+    @JoinColumn(name = "curso_id", nullable = false)
+    private Curso curso;
 
-    //private List<Aula> aulas;
+    @OneToMany(mappedBy = "modulo")
+    private List<Aula> aulas;
 }
